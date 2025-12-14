@@ -1,0 +1,261 @@
+/* ===== СТИЛИ ДЛЯ FORM.HTML ===== */
+/* Подключаются после variables.css, base.css, components.css, animations.css */
+
+/* === ТЕЛО === */
+
+body {
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+.form-main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem 3.2rem;
+    background-color: var(--bg);
+}
+
+.registration-form {
+    max-width: 50rem;
+    margin: 4rem auto 0;
+    padding: 3.2rem 2.4rem;
+    background: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+/* === ТЕКСТ === */
+
+.form-title {
+    margin: 0;
+    padding-top: 4rem;
+    width: 100%;
+    max-width: 100%;
+    text-shadow: var(--text-shadow);
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.23rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.form-label {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.required-mark {
+    color: var(--required-color);
+    font-weight: 700;
+}
+
+/* === КОМПОНЕНТЫ === */
+
+/* Инпут формы */
+.form-input {
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    background: var(--form-input-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 0.8rem;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+
+.form-input::placeholder {
+    color: var(--text-description);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.form-input:required {
+    border-left: 3px solid var(--required-color);
+}
+
+/* Кнопки */
+.btn {
+    flex: 1;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 1.6rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.024rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-submit {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-reset {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--form-border);
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ПЛАНШЕТЫ: 768px+ ===== */
+/* 
+ * Обоснование breakpoint 768px:
+ * Стандартная ширина планшетов.
+ * Показываем навигационное меню вместо бургер-кнопки.
+ * Увеличиваем размеры формы и элементов.
+ */
+@media (min-width: 768px) {
+    body {
+        background-color: var(--bg);
+    }
+
+    .form-main {
+        padding: 5rem 4rem 4rem;
+        background-color: var(--bg);
+    }
+
+    .form-title {
+        margin: 0 0 4rem;
+        padding-top: 0;
+        font-size: 6rem;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        text-shadow: none;
+    }
+
+    .registration-form {
+        padding: 4rem 3.2rem;
+        gap: 3.2rem;
+    }
+
+    .form-label {
+        font-size: 1.8rem;
+    }
+
+    .form-input {
+        padding: 1.4rem 2rem;
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 1.4rem 2.4rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ ДЕСКТОПЫ: 1024px+ ===== */
+/* 
+ * Обоснование breakpoint 1024px:
+ * Минимальная ширина для десктопа.
+ * Увеличиваем ширину формы для лучшей читаемости.
+ */
+@media (min-width: 1024px) {
+    .form-main {
+        padding: 6rem 8rem 5rem;
+    }
+
+    .form-title {
+        font-size: 8rem;
+        margin: 0 0 6rem;
+    }
+
+    .registration-form {
+        max-width: 60rem;
+        padding: 4.8rem 4rem;
+    }
+}
+
+/* ===== ЦЕЛЕВОЙ ДЕСКТОП: 1440px+ ===== */
+/* 
+ * Обоснование breakpoint 1440px:
+ * Разрешение макета из Figma.
+ * Оптимальные размеры для стандартных мониторов.
+ */
+@media (min-width: 1440px) {
+    .form-main {
+        padding: 6.4rem 13rem 5.6rem;
+    }
+
+    .form-title {
+        font-size: 10rem;
+        margin: 0 0 8rem;
+    }
+
+    .registration-form {
+        max-width: 70rem;
+        padding: 5.6rem 5.6rem;
+    }
+}
+
+/* ===== FullHD: 1920px+ ===== */
+/* 
+ * Обоснование breakpoint 1920px:
+ * Стандартное разрешение Full HD мониторов.
+ * Увеличиваем размеры элементов формы.
+ */
+@media (min-width: 1920px) {
+    .form-main {
+        padding: 8rem 20rem 8rem;
+    }
+
+    .form-title {
+        font-size: 12rem;
+        margin: 0 0 10rem;
+    }
+
+    .registration-form {
+        max-width: 80rem;
+        padding: 6.4rem 6.4rem;
+    }
+}
+
+/* ===== 2K: 2560px+ ===== */
+/* 
+ * Обоснование breakpoint 2560px:
+ * Разрешение 2K/QHD мониторов.
+ * Пропорциональное масштабирование для больших экранов.
+ */
+@media (min-width: 2560px) {
+    .form-main {
+        padding: 10rem 24rem 10rem;
+    }
+
+    .form-title {
+        font-size: 14rem;
+        margin: 0 0 12rem;
+    }
+
+    .registration-form {
+        max-width: 90rem;
+        padding: 7.2rem 7.2rem;
+    }
+}

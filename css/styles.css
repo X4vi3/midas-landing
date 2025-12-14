@@ -1,0 +1,674 @@
+/* ===== СТИЛИ ДЛЯ INDEX.HTML ===== */
+/* Подключаются после variables.css, base.css, components.css, animations.css */
+
+/* === ТЕЛО === */
+
+body {
+    background-color: var(--bg);
+}
+
+.page-main {
+    padding: 0 2rem 3.2rem;
+    background-color: var(--bg);
+}
+
+.utility {
+    margin: 4rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.row-bottom {
+    transform: none;
+}
+
+.col {
+    width: 100%;
+}
+
+.row-top .col-graphic,
+.row-bottom .col-graphic {
+    flex: none;
+    align-self: flex-start;
+    margin-top: -2rem;
+}
+
+.row-top .col-graphic {
+    order: 0;
+}
+
+.row-top .col-text {
+    order: 1;
+}
+
+.row-bottom .col-graphic {
+    order: 0;
+}
+
+.row-bottom .col-text {
+    order: 1;
+    transform: none;
+}
+
+.btn-wrapper {
+    margin-top: 4.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* === ТЕКСТ === */
+
+.page-title {
+    margin: 0;
+    padding-top: 4rem;
+    text-shadow: var(--text-shadow);
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.23rem;
+    font-weight: 700;
+}
+
+.title {
+    margin: 0 0 1.2rem;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.102rem;
+}
+
+.description {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.026rem;
+    color: var(--text-description);
+}
+
+.description strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* === Компоненты === */
+
+/* Feature Graphics */
+.feature-graphic {
+    width: auto;
+    max-width: 32rem;
+    height: 14rem;
+    margin: 0 0 0 -5rem;
+    transform: none;
+    align-self: flex-start;
+}
+
+.feature-graphic img {
+    width: 100%;
+    height: auto;
+}
+
+.feature-graphic .columns-desktop {
+    display: none;
+}
+
+.feature-graphic .columns-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Icon Glow */
+.icon-glow {
+    max-width: 26rem;
+    margin: -2rem 0 0 -2rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.icon-glow::before {
+    display: none;
+}
+
+.icon-img {
+    object-fit: contain;
+    width: 16rem;
+    max-width: 16rem;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    border-radius: 1.6rem;
+    padding: 1.2rem 2rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.024rem;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== ПЛАНШЕТЫ: 768px+ ===== */
+/* 
+ * Обоснование breakpoint 768px:
+ * Стандартная ширина планшетов (iPad и большинство Android-планшетов).
+ * На этом разрешении переходим от мобильной вертикальной компоновки к горизонтальной.
+ */
+@media (min-width: 768px) {
+    body {
+        background-color: var(--bg);
+    }
+
+    .page-main {
+        padding: 6rem 2rem 5rem;
+        background-color: var(--bg);
+    }
+
+    .page-title {
+        margin: 0 0 6rem;
+        padding-top: 0;
+        font-size: 7rem;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        text-shadow: none;
+    }
+
+    .utility {
+        max-width: calc(100% - 4rem);
+        margin: 0 auto;
+        gap: 5rem;
+    }
+
+    .row {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .row-bottom {
+        transform: none;
+    }
+
+    .col-text {
+        max-width: 32rem;
+        flex-shrink: 1;
+    }
+
+    .row-top .col-graphic,
+    .row-bottom .col-graphic {
+        flex: 0 1 auto;
+        margin-top: 0;
+        min-width: 0;
+    }
+
+    .row-top .col-graphic {
+        order: 1;
+    }
+
+    .row-top .col-text {
+        order: 0;
+    }
+
+    .row-bottom .col-graphic {
+        order: 0;
+    }
+
+    .row-bottom .col-text {
+        order: 1;
+        transform: none;
+    }
+
+    .feature-graphic {
+        max-width: 32rem;
+        flex-shrink: 1;
+        margin: 0 0 0 +5rem;
+    }
+
+    .feature-graphic .columns-desktop {
+        display: block;
+    }
+
+    .feature-graphic .columns-mobile {
+        display: none;
+    }
+
+    .title {
+        margin: 0 0 3rem;
+        font-size: 5.5rem;
+        line-height: 5.5rem;
+        letter-spacing: -0.06em;
+        word-wrap: break-word;
+    }
+
+    .description {
+        font-size: 2.2rem;
+        line-height: 3rem;
+        letter-spacing: -0.02em;
+    }
+
+    .icon-glow {
+        position: relative;
+        width: 28rem;
+        height: 28rem;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    .icon-glow::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 44rem;
+        height: 44rem;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at center, 
+            var(--glow-start) 0%, 
+            var(--glow-end) 78%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .icon-glow .icon-img {
+        width: 28rem;
+        height: 28rem;
+        min-width: 28rem;
+        min-height: 28rem;
+        object-fit: fill;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn {
+        width: auto;
+        border-radius: 2.4rem;
+        padding: 2.4rem 4.8rem;
+        height: 8rem;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ ДЕСКТОПЫ: 1024px+ ===== */
+/* 
+ * Обоснование breakpoint 1024px:
+ * Минимальная ширина для комфортной работы на десктопе.
+ * Подходит для ноутбуков и небольших мониторов.
+ */
+@media (min-width: 1024px) {
+    .page-main {
+        padding: 5rem 8rem 4rem;
+    }
+
+    .page-title {
+        font-size: 9rem;
+        margin: 0 0 5rem;
+    }
+
+    .utility {
+        max-width: 100rem;
+        gap: 2rem;
+    }
+
+    .col-text {
+        max-width: 45rem;
+    }
+
+    .title {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+    }
+
+    .description {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+    }
+}
+
+/* ===== ЦЕЛЕВОЙ ДЕСКТОП: 1440px+  ===== */
+/* 
+ * Обоснование breakpoint 1440px:
+ * Разрешение макета из Figma (1440x1360px).
+ * Стандартная ширина современных мониторов.
+ * На этом разрешении макет должен точно соответствовать дизайну.
+ */
+@media (min-width: 1440px) {
+    .page-main {
+        padding: 6.4rem 13rem 5.6rem;
+    }
+
+    .page-title {
+        margin: 0 0 6.4rem;
+        font-size: 12rem;
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+    }
+
+    .utility {
+        max-width: 118rem;
+        margin: 0 auto;
+        gap: 0;
+    }
+
+    .row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .row-bottom {
+        transform: translateX(-4rem);
+    }
+
+    .col-text {
+        max-width: 50rem;
+        width: 50rem;
+    }
+
+    .row-top .col-graphic {
+        flex: 0 0 62rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .row-bottom .col-graphic {
+        flex: 0 0 58rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row-bottom .col-text {
+        transform: translateX(-4rem);
+    }
+
+    .feature-graphic {
+        width: 62rem;
+        height: auto;
+        margin-top: -2rem;
+        transform: translateX(4rem);
+        max-width: none;
+    }
+
+    .feature-graphic img {
+        width: 100%;
+        height: auto;
+    }
+
+    .title {
+        margin: 0 0 3.2rem;
+        font-size: 8rem;
+        line-height: 8rem;
+        letter-spacing: -0.06em;
+    }
+
+    .description {
+        font-size: 3.2rem;
+        line-height: 4rem;
+        letter-spacing: -0.02em;
+    }
+
+    .icon-glow {
+        position: relative;
+        width: 51.5rem;
+        height: 51.5rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-glow::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75.5rem;
+        height: 75.5rem;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at center, 
+            var(--glow-start) 0%, 
+            var(--glow-end) 78%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .icon-glow .icon-img {
+        width: 51.5rem;
+        height: 51.5rem;
+        min-width: 51.5rem;
+        min-height: 51.5rem;
+        object-fit: fill;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn {
+        width: 25.1rem;
+        height: 8rem;
+        padding: 2.4rem 4.8rem;
+        border-radius: 2.4rem;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        letter-spacing: -0.024em;
+    }
+}
+/* ===== FullHD: 1920px+ ===== */
+/* 
+ * Обоснование breakpoint 1920px:
+ * Стандартное разрешение Full HD мониторов (1920x1080).
+ * Увеличиваем размеры элементов для лучшего использования пространства.
+ */
+@media (min-width: 1920px) {
+    .page-main {
+        padding: 8rem 20rem 8rem;
+    }
+
+    .utility {
+        max-width: 140rem;
+    }
+
+    .page-title {
+        font-size: 14rem;
+        margin: 0 0 8rem;
+    }
+
+    .title {
+        font-size: 9rem;
+        line-height: 9rem;
+        margin: 0 0 4rem;
+    }
+
+    .description {
+        font-size: 3.6rem;
+        line-height: 4.8rem;
+    }
+
+    .col-text {
+        max-width: 60rem;
+        width: 60rem;
+    }
+
+    .row-top .col-graphic {
+        flex: 0 0 72rem;
+    }
+
+    .row-bottom .col-graphic {
+        flex: 0 0 68rem;
+    }
+
+    .feature-graphic {
+        width: 72rem;
+    }
+
+    .icon-glow {
+        position: relative;
+        width: 60rem;
+        height: 60rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-glow::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 88rem;
+        height: 88rem;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at center, 
+            var(--glow-start) 0%, 
+            var(--glow-end) 78%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .icon-glow .icon-img {
+        width: 60rem;
+        height: 60rem;
+        min-width: 60rem;
+        min-height: 60rem;
+        object-fit: fill;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn {
+        width: 30rem;
+        height: 9rem;
+        padding: 2.8rem 5.6rem;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+    }
+}
+
+/* ===== 2K: 2560px+ ===== */
+/* 
+ * Обоснование breakpoint 2560px:
+ * Разрешение 2K/QHD мониторов (2560x1440).
+ * Пропорционально увеличиваем все элементы для больших экранов.
+ */
+@media (min-width: 2560px) {
+    .page-main {
+        padding: 10rem 24rem 10rem;
+    }
+
+    .utility {
+        max-width: 160rem;
+    }
+
+    .page-title {
+        font-size: 16rem;
+        margin: 0 0 10rem;
+    }
+
+    .title {
+        font-size: 10rem;
+        line-height: 10rem;
+        margin: 0 0 5rem;
+    }
+
+    .description {
+        font-size: 4rem;
+        line-height: 5.2rem;
+    }
+
+    .col-text {
+        max-width: 70rem;
+        width: 70rem;
+    }
+
+    .row-top .col-graphic {
+        flex: 0 0 80rem;
+    }
+
+    .row-bottom .col-graphic {
+        flex: 0 0 90rem;
+    }
+
+    .feature-graphic {
+        width: 80rem;
+    }
+
+    .icon-glow {
+        position: relative;
+        width: 68rem;
+        height: 68rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-glow::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85rem;
+        height: 85rem;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at center, 
+            var(--glow-start) 0%, 
+            var(--glow-end) 78%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .icon-glow .icon-img {
+        width: 68rem;
+        height: 68rem;
+        min-width: 68rem;
+        min-height: 68rem;
+        object-fit: fill;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn {
+        width: 35rem;
+        height: 10rem;
+        padding: 3.2rem 6.4rem;
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+}

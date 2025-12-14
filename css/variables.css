@@ -1,0 +1,43 @@
+/* ===== CSS ПЕРЕМЕННЫЕ ===== */
+/* Общие переменные для всех страниц проекта */
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+    
+    /* Основные цвета */
+    --bg: #0A0C0F;
+    --bg-elevated: #0e1118;
+    --bg-header: rgba(10, 12, 15, 0.8);
+    --divider-color: #181B20;
+    
+    /* Текст */
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7); /* Улучшен контраст для доступности */
+    --muted: var(--text-muted);
+    --text-description: rgba(255, 255, 255, 0.6); /* Улучшен контраст для доступности */
+    --text-footer: rgba(255, 255, 255, 0.5); /* Улучшен контраст для доступности */
+    
+    /* Эффекты */
+    --text-shadow: 0 3.2rem 6.4rem #ffffff14;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    
+    /* Кнопки и акценты */
+    --btn-bg: #ffffff;
+    --btn-text: #05070b;
+    
+    /* Градиенты */
+    --glow-start: rgba(255, 168, 119, 0.035);
+    --glow-end: rgba(255, 217, 119, 0);
+    
+    /* Галерея */
+    --gallery-link-bg: rgba(255, 255, 255, 0.9);
+    --gallery-link-text: #0A0C0F;
+    
+    /* Форма */
+    --form-bg: rgba(255, 255, 255, 0.05);
+    --form-border: rgba(255, 255, 255, 0.1);
+    --form-border-focus: rgba(255, 255, 255, 0.3);
+    --form-input-bg: rgba(255, 255, 255, 0.03);
+    --required-color: #ff6b6b;
+}
+

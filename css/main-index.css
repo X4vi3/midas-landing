@@ -1,0 +1,10 @@
+/* ===== ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ ДЛЯ INDEX.HTML ===== */
+/* Импортирует все необходимые стили в правильном порядке */
+
+@import url('normalize.css');
+@import url('variables.css');
+@import url('base.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('styles.css');
+

@@ -1,0 +1,115 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+/* Общие стили для всех страниц проекта */
+
+/* ===== ШРИФТЫ ===== */
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ===== RESET И БАЗОВЫЕ ПРАВИЛА ===== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ===== ВЫДЕЛЕНИЕ ТЕКСТА ===== */
+
+::selection {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text);
+}
+
+       ::-moz-selection {
+           background-color: rgba(255, 255, 255, 0.2);
+           color: var(--text);
+       }
+
+       /* ===== SKIP LINK ===== */
+       /* Ссылка для пропуска навигации - важна для доступности */
+       /* Скрыта визуально, но доступна для клавиатурной навигации и скринридеров */
+
+       .skip-link {
+           position: fixed;
+           top: -4rem;
+           left: 0;
+           background-color: var(--btn-bg);
+           color: var(--btn-text);
+           padding: 1rem 2rem;
+           text-decoration: none;
+           font-weight: 600;
+           font-size: 1.6rem;
+           z-index: 1000;
+           border-radius: 0 0 0.8rem 0;
+           transition: top 0.3s ease;
+       }
+
+       .skip-link:focus {
+           top: 0;
+           outline: 3px solid var(--text);
+           outline-offset: 2px;
+       }
+
+       /* Плавный скролл только при активации ссылки (Enter или клик) */
+       html:has(.skip-link:active) {
+           scroll-behavior: smooth;
+       }
+

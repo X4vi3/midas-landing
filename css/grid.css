@@ -1,0 +1,223 @@
+/* ===== СТИЛИ ДЛЯ GRID.HTML ===== */
+/* Подключаются после variables.css, base.css, components.css, animations.css */
+
+/* === ТЕЛО === */
+
+body {
+    background-color: var(--bg);
+}
+
+.gallery-main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 1.2rem;
+}
+
+.gallery-item img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === ТЕКСТ === */
+
+.gallery-title {
+    margin: 0 0 3rem;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+/* === КОМПОНЕНТЫ === */
+
+.gallery-link {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: center;
+    justify-self: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.4rem;
+    background: var(--gallery-link-bg);
+    color: var(--gallery-link-text);
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    border-radius: 2rem;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    z-index: 1;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== ПЛАНШЕТЫ: 480px+ ===== */
+/* 
+ * Обоснование breakpoint 480px:
+ * Переход от маленьких мобильных устройств к большим.
+ * Позволяет разместить 2 колонки в галерее вместо одной.
+ */
+@media (min-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== ПЛАНШЕТЫ: 768px+ ===== */
+
+/* 
+ * Обоснование breakpoint 768px:
+ * Стандартная ширина планшетов.
+ * Переход от 2 к 3 колонкам в галерее.
+ */
+@media (min-width: 768px) {
+    .gallery-main {
+        padding: 5rem 4rem;
+    }
+
+    .gallery-title {
+        margin: 0 0 5rem;
+        font-size: 6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .gallery-item {
+        border-radius: 1.6rem;
+    }
+
+    .gallery-link {
+        padding: 1.2rem 2.8rem;
+        font-size: 1.8rem;
+        border-radius: 2.2rem;
+    }
+}
+
+/* ===== МАЛЕНЬКИЕ ДЕСКТОПЫ: 1024px+ ===== */
+/* 
+ * Обоснование breakpoint 1024px:
+ * Минимальная ширина для десктопа.
+ * Переход от 3 к 4 колонкам в галерее.
+ */
+@media (min-width: 1024px) {
+    .gallery-main {
+        max-width: 120rem;
+        padding: 6.4rem 4rem;
+    }
+
+    .gallery-title {
+        margin: 0 0 6.4rem;
+        font-size: 8rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-link {
+        padding: 1.2rem 3.2rem;
+        font-size: 1.8rem;
+        border-radius: 2.4rem;
+    }
+}
+
+/* ===== ЦЕЛЕВОЙ ДЕСКТОП: 1440px+ ===== */
+/* 
+ * Обоснование breakpoint 1440px:
+ * Разрешение макета из Figma.
+ * Используем RAM-шаблон (auto-fit/minmax) для адаптивной галереи.
+ */
+@media (min-width: 1440px) {
+    .gallery-main {
+        max-width: 140rem;
+        padding: 6.4rem 13rem 5.6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* ===== FullHD: 1920px+ ===== */
+/* 
+ * Обоснование breakpoint 1920px:
+ * Стандартное разрешение Full HD мониторов.
+ * Увеличиваем размеры изображений в галерее.
+ */
+@media (min-width: 1920px) {
+    .gallery-main {
+        max-width: 160rem;
+        padding: 8rem 20rem 8rem;
+    }
+
+    .gallery-title {
+        font-size: 10rem;
+        margin: 0 0 8rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+        gap: 2.4rem;
+    }
+
+    .gallery-link {
+        padding: 1.4rem 3.6rem;
+        font-size: 2rem;
+    }
+}
+
+/* ===== 2K: 2560px+ ===== */
+/* 
+ * Обоснование breakpoint 2560px:
+ * Разрешение 2K/QHD мониторов.
+ * Максимальное использование пространства для больших экранов.
+ */
+@media (min-width: 2560px) {
+    .gallery-main {
+        max-width: 180rem;
+        padding: 10rem 24rem 10rem;
+    }
+
+    .gallery-title {
+        font-size: 12rem;
+        margin: 0 0 10rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+        gap: 3rem;
+    }
+
+    .gallery-link {
+        padding: 1.6rem 4rem;
+        font-size: 2.2rem;
+    }
+}
