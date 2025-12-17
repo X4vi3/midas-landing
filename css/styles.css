@@ -10,6 +10,7 @@ body {
 .page-main {
     padding: 0 2rem 3.2rem;
     background-color: var(--bg);
+    flex: 1;
 }
 
 .utility {

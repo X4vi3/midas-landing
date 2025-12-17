@@ -52,7 +52,8 @@ body {
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     text-rendering: optimizeLegibility;
     min-height: 100vh;
-
+    display: flex;
+    flex-direction: column;
 }
 
 img {
